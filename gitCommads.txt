@@ -1,0 +1,229 @@
+=============================================================================
+  GIT SETUP & WORKFLOW COMMANDS (FOLDER-SPECIFIC / LOCAL ACCOUNT)
+=============================================================================
+
+This guide shows you how to configure a specific GitHub account ONLY for this 
+project folder without affecting your global Git settings or other projects.
+
+-----------------------------------------------------------------------------
+STEP 1: OPEN TERMINAL IN YOUR PROJECT FOLDER
+-----------------------------------------------------------------------------
+Open PowerShell or Command Prompt and make sure you are inside this folder:
+cd "c:\Users\DELL\Downloads\oms.ingeniors.comm\oms.ingeniors.com"
+
+
+-----------------------------------------------------------------------------
+STEP 2: CONFIGURE LOCAL GIT ACCOUNT (FOR THIS FOLDER ONLY)
+-----------------------------------------------------------------------------
+Using `--local` sets your name and email ONLY for this repository. 
+Your other repositories on your PC will keep using their own global accounts.
+
+git config --local user.name "Ayesha Siddiqa"
+git config --local user.email "ayeshasiddiqa8090@gmail.com"
+
+# Verify that local account is correctly set:
+git config --local user.name
+git config --local user.email
+
+
+-----------------------------------------------------------------------------
+STEP 3: INITIALIZE GIT (IF NOT ALREADY INITIALIZED)
+-----------------------------------------------------------------------------
+git init
+git branch -M main
+
+
+-----------------------------------------------------------------------------
+STEP 4: CONNECT TO GITHUB REPOSITORY
+-----------------------------------------------------------------------------
+# Check if a remote is already connected:
+git remote -v
+
+# If no remote exists, add your repository URL:
+git remote add origin https://github.com/Ayehsa-Siddiqa/oms.ingeniors.com.git
+
+# If you ever need to update/change the remote URL:
+git remote set-url origin https://github.com/Ayehsa-Siddiqa/oms.ingeniors.com.git
+
+
+-----------------------------------------------------------------------------
+STEP 5: STAGE AND COMMIT LOCAL FILES
+-----------------------------------------------------------------------------
+# Check status of changed / new files:
+git status
+
+# Add all files to staging:
+git add .
+
+# Commit with a message:
+git commit -m "Initial commit of OMS codebase"
+
+
+-----------------------------------------------------------------------------
+STEP 6: SYNC WITH GITHUB (IF REPO ON GITHUB HAS INITIAL FILES / README)
+-----------------------------------------------------------------------------
+# If GitHub already has a commit (e.g. default README.md created on GitHub):
+git pull origin main --allow-unrelated-histories
+
+# If there is a merge conflict in README.md:
+# 1. Open README.md and keep your desired content.
+# 2. Stage and commit the resolved merge:
+git add README.md
+git commit -m "Merge remote origin/main"
+
+
+-----------------------------------------------------------------------------
+STEP 7: PUSH CODE TO GITHUB
+-----------------------------------------------------------------------------
+# First push (sets upstream tracking):
+git push -u origin main
+
+
+=============================================================================
+  HOW TO PUSH NEW UPDATES TO GITHUB (DAILY / REGULAR WORKFLOW)
+=============================================================================
+
+Whenever you make new edits, changes, or additions to your code in the future:
+
+1. Check what files you changed:
+   git status
+
+2. Stage all changed files:
+   git add .
+
+   # (Optional: stage only a specific file):
+   # git add path/to/file.php
+
+3. Commit your changes with a description:
+   git commit -m "Describe what updates you made"
+
+4. Pull latest updates from GitHub (good practice before pushing):
+   git pull origin main
+
+5. Push your updates to GitHub:
+   git push
+
+
+=============================================================================
+  HOW TO CLONE A REPOSITORY (YOURS OR ANOTHER PERSON'S)
+=============================================================================
+
+1. Open your terminal and navigate to the directory where you want the project:
+   cd "C:\Users\DELL\Projects"
+
+2. Clone the repository using its GitHub URL:
+   git clone https://github.com/Username/repository-name.git
+
+3. Enter into the newly downloaded project folder:
+   cd repository-name
+
+4. IMPORTANT: Set your folder-specific Git user in the cloned project:
+   git config --local user.name "Ayesha Siddiqa"
+   git config --local user.email "ayeshasiddiqa8090@gmail.com"
+
+5. Verify your account in this cloned project:
+   git config --local user.name
+   git config --local user.email
+
+
+=============================================================================
+  HOW TO WORK ON ANOTHER PERSON'S PROJECT & PUSH CHANGES
+=============================================================================
+
+-----------------------------------------------------------------------------
+METHOD A: WHEN YOU ARE A COLLABORATOR (You have direct push access)
+-----------------------------------------------------------------------------
+If the repository owner added your GitHub account as a Collaborator:
+
+1. Clone their repository to your computer:
+   git clone https://github.com/OwnerUsername/project-name.git
+   cd project-name
+
+2. Set your folder-specific account:
+   git config --local user.name "Ayesha Siddiqa"
+   git config --local user.email "ayeshasiddiqa8090@gmail.com"
+
+3. Create and switch to a new feature branch for your task:
+   git checkout -b feature-my-update
+
+4. Make your code changes, then stage and commit:
+   git add .
+   git commit -m "Add feature or fix bug"
+
+5. Push your feature branch to GitHub:
+   git push -u origin feature-my-update
+
+6. Or if you are pushing directly to the main branch:
+   git pull origin main
+   git push origin main
+
+
+-----------------------------------------------------------------------------
+METHOD B: FORK & PULL REQUEST (Open Source / No Direct Write Permission)
+-----------------------------------------------------------------------------
+If you do NOT have direct push access to their repository:
+
+1. On GitHub: Open their repository page and click the "Fork" button (top-right).
+   This creates a copy of the project under your own GitHub account:
+   https://github.com/Ayehsa-Siddiqa/project-name.git
+
+2. Clone YOUR fork to your computer:
+   git clone https://github.com/Ayehsa-Siddiqa/project-name.git
+   cd project-name
+
+3. Set your folder-specific account:
+   git config --local user.name "Ayesha Siddiqa"
+   git config --local user.email "ayeshasiddiqa8090@gmail.com"
+
+4. Connect the original owner's repository as "upstream" (to receive their future updates):
+   git remote add upstream https://github.com/OriginalOwner/project-name.git
+
+   # Verify remotes:
+   git remote -v
+   # origin   -> your fork on GitHub (fetch & push)
+   # upstream -> original repository (fetch & push)
+
+5. Create a new branch for your work:
+   git checkout -b my-new-feature
+
+6. Make your code changes, then stage and commit:
+   git add .
+   git commit -m "Implemented requested feature"
+
+7. Push the branch to YOUR fork on GitHub:
+   git push -u origin my-new-feature
+
+8. Open a Pull Request:
+   Go to GitHub on the original owner's repository page and click 
+   "Compare & pull request" to submit your work for the owner to review and merge!
+
+
+=============================================================================
+  HOW TO SYNC / PULL LATEST UPDATES FROM THE ORIGINAL (UPSTREAM) REPO
+=============================================================================
+When the original project owner adds new updates and you want those updates in your copy:
+
+1. Fetch all updates from the original repository:
+   git fetch upstream
+
+2. Switch to your local main branch:
+   git checkout main
+
+3. Merge their changes into your local main branch:
+   git merge upstream/main
+
+4. Push the synced updates to your GitHub fork:
+   git push origin main
+
+
+=============================================================================
+  HANDY SHORTCUTS & TROUBLESHOOTING
+=============================================================================
+
+- Check status of changed files:        git status
+- View recent commit history:           git log --oneline -n 10
+- View all connected remotes:           git remote -v
+- Check current active branch:          git branch
+- Discard unstaged changes in a file:   git checkout -- filename
+- Undo last commit (keep your changes): git reset --soft HEAD~1
+=============================================================================
