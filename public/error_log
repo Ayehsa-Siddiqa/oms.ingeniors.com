@@ -1,0 +1,45 @@
+[28-Sep-2026 22:10:05 Asia/Karachi] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1044] Access denied for user 'hujyopjz_omsuser2'@'localhost' to database 'hujyopjz_oms' in /home/hujyopjz/oms.ingeniors.com/app/core/Database.php:12
+Stack trace:
+#0 /home/hujyopjz/oms.ingeniors.com/app/core/Database.php(12): PDO->__construct('mysql:host=loca...', 'hujyopjz_omsuse...', Object(SensitiveParameterValue), Array)
+#1 /home/hujyopjz/oms.ingeniors.com/app/core/Auth.php(25): Database::connection()
+#2 /home/hujyopjz/oms.ingeniors.com/app/controllers/AuthController.php(19): Auth::login('ayesha@gmail.co...', '123456', false)
+#3 /home/hujyopjz/oms.ingeniors.com/app/core/Router.php(41): AuthController->login()
+#4 /home/hujyopjz/oms.ingeniors.com/public/index.php(28): Router->dispatch('POST', 'login')
+#5 {main}
+  thrown in /home/hujyopjz/oms.ingeniors.com/app/core/Database.php on line 12
+[28-Sep-2026 22:10:09 Asia/Karachi] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1044] Access denied for user 'hujyopjz_omsuser2'@'localhost' to database 'hujyopjz_oms' in /home/hujyopjz/oms.ingeniors.com/app/core/Database.php:12
+Stack trace:
+#0 /home/hujyopjz/oms.ingeniors.com/app/core/Database.php(12): PDO->__construct('mysql:host=loca...', 'hujyopjz_omsuse...', Object(SensitiveParameterValue), Array)
+#1 /home/hujyopjz/oms.ingeniors.com/app/core/Auth.php(25): Database::connection()
+#2 /home/hujyopjz/oms.ingeniors.com/app/controllers/AuthController.php(19): Auth::login('ayesha@gmail.co...', '123456', false)
+#3 /home/hujyopjz/oms.ingeniors.com/app/core/Router.php(41): AuthController->login()
+#4 /home/hujyopjz/oms.ingeniors.com/public/index.php(28): Router->dispatch('POST', 'login')
+#5 {main}
+  thrown in /home/hujyopjz/oms.ingeniors.com/app/core/Database.php on line 12
+[28-Sep-2026 22:10:24 Asia/Karachi] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1044] Access denied for user 'hujyopjz_omsuser2'@'localhost' to database 'hujyopjz_oms' in /home/hujyopjz/oms.ingeniors.com/app/core/Database.php:12
+Stack trace:
+#0 /home/hujyopjz/oms.ingeniors.com/app/core/Database.php(12): PDO->__construct('mysql:host=loca...', 'hujyopjz_omsuse...', Object(SensitiveParameterValue), Array)
+#1 /home/hujyopjz/oms.ingeniors.com/app/core/Auth.php(25): Database::connection()
+#2 /home/hujyopjz/oms.ingeniors.com/app/controllers/AuthController.php(19): Auth::login('ayesha@gmail.co...', '123456', false)
+#3 /home/hujyopjz/oms.ingeniors.com/app/core/Router.php(41): AuthController->login()
+#4 /home/hujyopjz/oms.ingeniors.com/public/index.php(28): Router->dispatch('POST', 'login')
+#5 {main}
+  thrown in /home/hujyopjz/oms.ingeniors.com/app/core/Database.php on line 12
+[28-Sep-2026 22:10:40 Asia/Karachi] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1044] Access denied for user 'hujyopjz_omsuser2'@'localhost' to database 'hujyopjz_oms' in /home/hujyopjz/oms.ingeniors.com/app/core/Database.php:12
+Stack trace:
+#0 /home/hujyopjz/oms.ingeniors.com/app/core/Database.php(12): PDO->__construct('mysql:host=loca...', 'hujyopjz_omsuse...', Object(SensitiveParameterValue), Array)
+#1 /home/hujyopjz/oms.ingeniors.com/app/core/Auth.php(25): Database::connection()
+#2 /home/hujyopjz/oms.ingeniors.com/app/controllers/AuthController.php(19): Auth::login('ayesha@gmail.co...', '123456', false)
+#3 /home/hujyopjz/oms.ingeniors.com/app/core/Router.php(41): AuthController->login()
+#4 /home/hujyopjz/oms.ingeniors.com/public/index.php(28): Router->dispatch('POST', 'login')
+#5 {main}
+  thrown in /home/hujyopjz/oms.ingeniors.com/app/core/Database.php on line 12
+[28-Sep-2026 22:13:09 Asia/Karachi] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'hujyopjz_omsuser'@'localhost' (using password: YES) in /home/hujyopjz/oms.ingeniors.com/app/core/Database.php:12
+Stack trace:
+#0 /home/hujyopjz/oms.ingeniors.com/app/core/Database.php(12): PDO->__construct('mysql:host=loca...', 'hujyopjz_omsuse...', Object(SensitiveParameterValue), Array)
+#1 /home/hujyopjz/oms.ingeniors.com/app/core/Auth.php(25): Database::connection()
+#2 /home/hujyopjz/oms.ingeniors.com/app/controllers/AuthController.php(19): Auth::login('ayeshasiddiqa80...', 'ewfgr', false)
+#3 /home/hujyopjz/oms.ingeniors.com/app/core/Router.php(41): AuthController->login()
+#4 /home/hujyopjz/oms.ingeniors.com/public/index.php(28): Router->dispatch('POST', 'login')
+#5 {main}
+  thrown in /home/hujyopjz/oms.ingeniors.com/app/core/Database.php on line 12
