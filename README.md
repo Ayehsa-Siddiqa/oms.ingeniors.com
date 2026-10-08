@@ -96,3 +96,4 @@ storage/
 - Keep `assets/uploads` writable for document uploads.
 - For production, configure HTTPS and change cookie `secure` to `true` in `public/index.php`.
 - The forgot password feature creates a reset token record. Connect SMTP before using it to email reset links.
+
