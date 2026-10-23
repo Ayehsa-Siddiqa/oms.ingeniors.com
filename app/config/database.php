@@ -14,9 +14,9 @@ if ($isLocal) {
 
 return [
     'host' => 'localhost',
-    'database' => 'hujyopjz_oms',     // full database name from your hosting panel
-    'username' => 'hujyopjz_omsuser',   // full database username from your hosting panel
-    'password' => '^SWS~Q3Sho7iB0e)',            // the password you set for that user
+    'database' => '-',     // full database name from your hosting panel
+    'username' => '-',   // full database username from your hosting panel
+    'password' => '-',            // the password you set for that user
     'charset' => 'utf8mb4',
 ];
 
